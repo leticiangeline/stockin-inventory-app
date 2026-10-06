@@ -1,16 +1,40 @@
-# React + Vite
+# StockIn — Store Inventory Management
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A small store inventory app built with React and Vite. It has a home dashboard, a
+searchable inventory table, a product catalog, stock status alerts (in stock / low
+stock / out of stock), add-product and add-stock modals, and CSV export. Styling is
+done with Tailwind CSS (custom `brand` palette in `tailwind.config.js`).
 
-Currently, two official plugins are available:
+## Prerequisites
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- [Node.js](https://nodejs.org) `^20.19.0` or `>=22.12.0` (required by Vite 8)
+- npm (bundled with Node)
 
-## React Compiler
+## Setup
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+```bash
+git clone https://github.com/leticiangeline/stockin-inventory-app.git
+cd stockin-inventory-app
+npm install
+npm run dev
+```
 
-## Expanding the ESLint configuration
+The dev server starts at [http://localhost:5173](http://localhost:5173) with hot
+module replacement enabled.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Available scripts
+
+| Script            | What it does                              |
+| ----------------- | ----------------------------------------- |
+| `npm run dev`     | Start the dev server                      |
+| `npm run build`   | Build the production bundle into `dist/`  |
+| `npm run preview` | Serve the production build locally        |
+| `npm run lint`    | Run ESLint over the project               |
+
+## Project layout
+
+- `src/components/` — shared UI pieces (header, nav, modals, `ui/` primitives)
+- `src/components/views/` — the Home, Inventory, and Catalog views
+- `src/data/` — seed product data (app state lives in `src/App.jsx`)
+- `src/constants/`, `src/utils/` — stock status definitions, CSV export, validation
+
